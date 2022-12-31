@@ -33,6 +33,8 @@ app.use(express.json())
 
 app.use(cors())
 
+app.use(express.static('build'))
+
 const generateId = () => {
     let id;
     const number = Math.floor(Math.random() * 1000)
@@ -106,4 +108,4 @@ const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
-app.use(morgan("tiny"))
+app.use(morgan("tiny")) 
